@@ -8,6 +8,46 @@ OUTPUT_DIR = "/Users/msei/Downloads/HB/"
 OUTPUT_DIR = "/media/terra/MyBookEx/HB/"
 CALIBRE_CMD = "/Applications/calibre.app/Contents/console.app/Contents/MacOS/calibredb"
 CALIBRE_CMD = "/opt/calibre/calibredb"
+CC_PUBLISHER_URL = "hb_publisher_url"
+CC_MD5 = "hb_md5"
+
+
+def add_metadata_column(machine_name, display_name, data_type):
+    cmd = list()
+    cmd.append(CALIBRE_CMD)
+    cmd.append("add_custom_column")
+    cmd.append("--dont-notify-gui")
+    cmd.append(str(machine_name))
+    cmd.append(str(display_name))
+    cmd.append(str(data_type))
+    subprocess.call(cmd)
+
+
+def set_metadata_custom_column(machine_name, book_id, value):
+    cmd = list()
+    cmd.append(CALIBRE_CMD)
+    cmd.append("set_custom")
+    cmd.append("--dont-notify-gui")
+    cmd.append(str(machine_name))
+    cmd.append(str(book_id))
+    cmd.append(str(value))
+    subprocess.call(cmd)
+
+
+def set_metadata_column(machine_name, book_id, value):
+    cmd = list()
+    cmd.append(CALIBRE_CMD)
+    cmd.append("set_metadata")
+    cmd.append("--dont-notify-gui")
+    cmd.append(str(book_id))
+    cmd.append("--field")
+    cmd.append(machine_name + ":" + value)
+    subprocess.call(cmd)
+
+
+add_metadata_column(CC_PUBLISHER_URL, "HB Publisher URL", "text")
+add_metadata_column(CC_MD5, "HB MD5", "text")
+
 
 class DownloadLink:
     def __init__(self):
@@ -77,18 +117,30 @@ def add_to_calibre(book_info):
     cmd.append("--tags")
     cmd.append("HUMBLE_BUNDLE," + already_imported.get_bundle_name())
     cmd.append("--dont-notify-gui")
+    cmd.append("")
     cmd.append("--languages")
     cmd.append("en")
     f = OUTPUT_DIR + already_imported.get_filename()
     cmd.append(f)
     calibre_output = subprocess.Popen(cmd, shell=False, stdout=subprocess.PIPE).stdout.read()
-    touch_file(f + ".calibre_imported")
     book_id = -1
     try:
-        book_id = int(calibre_output.split('\n')[1].replace("Added book ids: ", ""))
+        temp = calibre_output.split('\n')
+        for line in temp:
+            if line.startswith("Added book ids: "):
+                book_id = int(line.replace("Added book ids: ", ""))
+                break
+        if book_id == -1:
+            raise Exception("Couldn't find 'Added book ids' - line")
     except Exception, e:
         print calibre_output
         raise e
+    touch_file(f + ".calibre_imported")
+
+    set_metadata_custom_column(CC_PUBLISHER_URL, book_id, already_imported.company_link)
+    set_metadata_custom_column(CC_MD5, book_id, already_imported.md5)
+    set_metadata_column("publisher", book_id, already_imported.company)
+
     for file in book_info:
         if file.get_filename() == already_imported.get_filename():
             continue

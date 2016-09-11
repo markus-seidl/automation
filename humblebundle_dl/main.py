@@ -56,6 +56,7 @@ class DownloadLink:
         self.md5 = None
         self.link = None
         self.company = None
+        self.company_link = None
         self.bundle_name = None
 
     def get_filename(self):
@@ -103,17 +104,25 @@ def load_all_purchases(d):
 def parse_purchase_page(d, purchase):
     d.get(purchase)
 
+    while len(d.find_elements_by_class_name('loading')) > 0:
+        print "*", "AJAX Loading on page, waiting..."
+        time.sleep(10)
+
     links = list()
     page_title = d.title
+    if page_title is None or page_title == "" or len(page_title) == 0:
+        print "-"
 
     for row in d.find_elements_by_class_name('row'):
         productName = row.get_attribute('data-human-name')
         temp = row.find_element_by_class_name('subtitle')
         company = ""
+        company_link = ""
         if temp:
             temp = temp.find_elements_by_tag_name('a')
             if temp and len(temp) > 0:
                 company = temp[0].text
+                company_link = temp[0].get_attribute('href')
 
         product = Product()
         product.humanName = productName
@@ -141,6 +150,7 @@ def parse_purchase_page(d, purchase):
                 download.platformName = platform_name
                 download.purchaseLink = purchase
                 download.company = company
+                download.company_link = company_link
                 download.bundle_name = page_title
                 product.downloads[platform_name].append(download)
 
@@ -199,7 +209,7 @@ i = 0
 for purchase in purchases:
     products = parse_purchase_page(driver, purchase)
     i += 1
-    # print "Handle purchase page ", i, " of ", len(purchases), ": ", purchase
+    print "Handle purchase page ", i, " of ", len(purchases), ": ", purchase
 
     for product in products:
         for platform in product.downloads:
