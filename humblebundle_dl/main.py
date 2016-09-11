@@ -15,7 +15,7 @@ import cPickle
 
 
 # Configuration part
-OUTPUT_DIR = "/Volumes/Leviathan/HB/"
+OUTPUT_DIR = "/media/terra/MyBookEx/HB/"
 HB_USER = keyring.get_password("humblebundle_dl", "user")
 HB_PASS = keyring.get_password("humblebundle_dl", "pass")
 # /Configuration part
@@ -55,6 +55,8 @@ class DownloadLink:
         self.humanName = None
         self.md5 = None
         self.link = None
+        self.company = None
+        self.bundle_name = None
 
     def get_filename(self):
         return self.link.split('/')[-1].split('?')[0]
@@ -73,7 +75,7 @@ def login(d):
     d.find_element_by_class_name ("js-submit").click()
 
     print("Wait until user has entered security code...")
-    time.sleep(30)
+    raw_input('Press enter when done.')
 
 
 def load_all_purchases(d):
@@ -102,10 +104,16 @@ def parse_purchase_page(d, purchase):
     d.get(purchase)
 
     links = list()
+    page_title = d.title
 
     for row in d.find_elements_by_class_name('row'):
         productName = row.get_attribute('data-human-name')
-        company = row.find_element_by_class_name('subtitle').find_element_by_tag_name('a').text
+        temp = row.find_element_by_class_name('subtitle')
+        company = ""
+        if temp:
+            temp = temp.find_elements_by_tag_name('a')
+            if temp and len(temp) > 0:
+                company = temp[0].text
 
         product = Product()
         product.humanName = productName
@@ -133,6 +141,7 @@ def parse_purchase_page(d, purchase):
                 download.platformName = platform_name
                 download.purchaseLink = purchase
                 download.company = company
+                download.bundle_name = page_title
                 product.downloads[platform_name].append(download)
 
     return links
@@ -144,29 +153,39 @@ def download_link(dl):
 
     # the pickle file may exist, but not the download. This is ok, as import_calibre removes the download after import
     # to save disk space and mark the file as "imported"
-    if os.path.exists(file_name_pickle):
-        print "File already exists: ", file_name
-        return
+    # if os.path.exists(file_name_pickle):
+    #     print "File already exists: ", file_name
+    #     return
 
     if not os.path.exists(file_name):
-        u = urllib2.urlopen(dl.link)
-        with open(file_name, 'wb') as f:
-            meta = u.info()
-            file_size = int(meta.getheaders("Content-Length")[0])
-            print "Downloading: %s Bytes: %s" % (file_name, file_size)
+        try:
+            u = urllib2.urlopen(dl.link)
+            with open(file_name, 'wb') as f:
+                meta = u.info()
+                file_size = int(meta.getheaders("Content-Length")[0])
+                print "Downloading: %s %s MB" % (file_name, file_size / 1024.0 / 1024.0)
 
-            file_size_dl = 0
-            block_sz = 8192
-            while True:
-                buffer = u.read(block_sz)
-                if not buffer:
-                    break
+                file_size_dl = 0
+                last_report = 0
+                block_sz = 8192
+                print "\t",
+                while True:
+                    buffer = u.read(block_sz)
+                    if not buffer:
+                        break
 
-                file_size_dl += len(buffer)
-                f.write(buffer)
-                # status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-                # status = status + chr(8)*(len(status)+1)
-                # print status,
+                    file_size_dl += len(buffer)
+                    f.write(buffer)
+                    p = file_size_dl * 100. / file_size
+                    if p - last_report >= 10:
+                        status = r"[%3.2f%%]" % (file_size_dl * 100. / file_size)
+                        # status = status + chr(8)*(len(status)+1)
+                        print status,
+                        last_report = p
+            print "...done"
+        except urllib2.HTTPError as e:
+            print "Error while downloading " + dl.link
+            print e
 
     with open(file_name_pickle, "wb") as handle:
         cPickle.dump(dl, handle)
@@ -176,8 +195,11 @@ login(driver)
 
 purchases = load_all_purchases(driver)
 
+i = 0
 for purchase in purchases:
     products = parse_purchase_page(driver, purchase)
+    i += 1
+    # print "Handle purchase page ", i, " of ", len(purchases), ": ", purchase
 
     for product in products:
         for platform in product.downloads:
@@ -189,5 +211,16 @@ for purchase in purchases:
 
                 if "zip" in download.link:
                     continue
+
+                file_name = OUTPUT_DIR + download.get_filename()
+                file_name_pickle = file_name + ".pickle"
+
+                with open(file_name_pickle, "wb") as handle:
+                    cPickle.dump(download, handle)
+
+                if os.path.exists(file_name_pickle) and os.path.exists(file_name):
+                    continue
+
+                # print "wget", "\"" + download.link + "\"", " -O ", file_name
 
                 download_link(download)
