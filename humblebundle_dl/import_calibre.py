@@ -1,4 +1,4 @@
-import cPickle
+import pickle
 import os
 from os import listdir
 from os.path import isfile, join
@@ -80,7 +80,7 @@ for f in allfiles:
 
     info = None
     with open(OUTPUT_DIR + f) as handle:
-        info = cPickle.load(handle)
+        info = pickle.load(handle)
 
     if info.humanName not in books:
         books[info.humanName] = list()
@@ -132,8 +132,8 @@ def add_to_calibre(book_info):
                 break
         if book_id == -1:
             raise Exception("Couldn't find 'Added book ids' - line")
-    except Exception, e:
-        print calibre_output
+    except Exception as e:
+        print(calibre_output)
         raise e
     touch_file(f + ".calibre_imported")
 
@@ -173,10 +173,10 @@ for book_name in books:
             can_import += 1
 
     if can_import > 0:
-        print book_name, "Can't be imported " + str(can_import) + " files are missing from " + str(len(book_info))
+        print(book_name, "Can't be imported " + str(can_import) + " files are missing from " + str(len(book_info)))
         continue
 
-    print book_name
+    print(book_name)
 
     temp = dict()
     for file in book_info:  # file is DownloadLink
@@ -196,8 +196,8 @@ for book_name in books:
 
     try:
         add_to_calibre(filtered_book_info)
-    except Exception, e:
-        print "Error adding the book ", book_name, " maybe parsing the id failed or the subcommand?"
-        print e
-        print "---"
+    except Exception as e:
+        print("Error adding the book ", book_name, " maybe parsing the id failed or the subcommand?")
+        print(e)
+        print("---")
         continue
