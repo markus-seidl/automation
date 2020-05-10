@@ -1,0 +1,702 @@
+#
+#
+# SERIES OVERRIDES
+#
+#
+B01IF53ELS:
+  author: Be My Match
+  adjustments:
+    - title:
+        - find: '[:]? Be My Match [0-9]+'
+          replace: ''
+B00FZKV388:
+  author: Star Trek Titan
+  adjustments:
+    - title:
+        - find: '[:]? Star Trek Titan [0-9]+'
+          replace: ''
+B00LGOT4V0:
+  author: The Witcher
+  adjustments:
+    - title:
+        - find: '[:]? The Witcher [0-9]+'
+          replace: ''
+B00L5HTCDI:
+  author: The Origin Mystery
+B00HPVQL0U:
+  author: Sherlock Holmes - Collectors Edition
+B017R6H494:
+  author: John Sinclair - Classics
+  adjustments:
+    - title:
+        - find: '[:]? John Sinclair - Tonstudio Braun Klassiker [0-9]+'
+          replace: ''
+  index_regex: 'Klassiker ([0-9]+)'
+B00MPKAWTW:
+  author: John Sinclair
+  adjustments:
+    - title:
+        - find: ': John Sinclair [0-9]+'
+          replace: ''
+B00HVEIHIK:
+  adjustments:
+    - title:
+        - find: '[:]? John Sinclair [0-9]+'
+          replace: ''
+  index_regex: 'John Sinclair ([0-9]+)'
+B00JLEB460:
+  author: 'Sherlock Holmes - Die neuen Fälle'
+  adjustments:
+    - title:
+        - find: '[:]? Sherlock Holmes - Die neuen Fälle [0-9]+'
+          replace: ''
+B00FYNW5L0: # Das Rad der Zeit
+  author: 'Das Rad der Zeit'
+  adjustments:
+    - title:
+        - find: '[:]? Das Rad der Zeit [0-9]+'
+          replace: ''
+B01L02SHDI: # Captain Future
+  author: 'Captain Future'
+  adjustments:
+    - title:
+        - find: '[:]? Captain Future - The Return of Captain Future [0-9]+'
+          replace: ''
+        - find: '[:]? Captain Future - The Return of Captain Future [0-9]+'
+          replace: ''
+B00N9H3F5S: # Sword of Truth
+  author: 'Sword Of Truth'
+  adjustments:
+    - title:
+        - find: '[:]? Chainfire Trilogy, Part [0-9]+, Sword of Truth, Book [0-9]+'
+          replace: ''
+        - find: '[:]? Sword of Truth, Book [0-9]+'
+          replace: ''
+B00HZFQK0W: # Saber Rider
+  author: 'Saber Rider'
+  adjustments:
+    - title:
+        - find: '[:]? Saber Rider & The Star Sheriffs [0-9]+'
+          replace: ''
+B00HPVO1XY:
+  author: 'Sherlock Holmes (de)'
+  adjustments:
+    - title:
+        - find: '[:]? Sherlock Holmes [0-9]+'
+          replace: ''
+B00HW1SOC6:
+  author: 'Pater Brown'
+  adjustments:
+    - title:
+        - find: '[:]? Pater Brown [0-9]+'
+          replace: ''
+B079Z51CCG:
+  author: 'Eismond'
+  adjustments:
+    - title:
+        - find: '[:]? Eismond [0-9]+'
+          replace: ''
+B00OTOASIM:
+  author: 'Eine Braut für jeden Tag'
+  adjustments:
+    - title:
+        - find: '[:]? Eine Braut für jeden Tag [0-9]+'
+          replace: ''
+B075GWMSJM:
+  author: 'ALIEN'
+  adjustments:
+    - title:
+        - find: '[:]? Die komplette [0-9]. Staffel'
+          replace: ''
+B00FYVII36:
+  author: 'Eragon'
+  adjustments:
+    - title:
+        - find: '[:]? Eragon [0-9]+'
+          replace: ''
+B004UZRRGG:
+  author: 'Perry Rhodan - Silber Edition'
+  adjustments:
+    - title:
+        - find: '[:]? Perry Rhodan Silber Edition [0-9]+.'
+          replace: ''
+    - title:
+        - find: 'Der [0-9]+.? Zyklus.? Die Meister der Insel'
+          replace: ''
+B07GL2RSHT:
+  author: 'Perry Rhodan - Silber Edition'
+  adjustments:
+    - title:
+        - find: '[:]? Perry Rhodan Silber Edition [0-9]+.'
+          replace: ''
+    - title:
+        - find: ' Der [0-9]+.? Zyklus.? Die Endlose Armada'
+          replace: ''
+B07F8BJT78:
+  author: 'Perry Rhodan - Silber Edition'
+  adjustments:
+    - title:
+        - find: '[:]? Perry Rhodan Silber Edition [0-9]+.'
+          replace: ''
+    - title:
+        - find: ' Der [0-9]+.? Zyklus.? Die Meister der Insel'
+          replace: ''
+B07GL476FT:
+  author: 'Perry Rhodan - Silber Edition'
+  adjustments:
+    - title:
+        - find: '[:]? Perry Rhodan Silber Edition [0-9]+.?'
+          replace: ''
+        - find: 'Der [0-9]+.? Zyklus.? Das Konzil'
+          replace: ''
+B07GL2SJRP:
+  author: 'Perry Rhodan - Silber Edition'
+  adjustments:
+    - title:
+        - find: '[:]? Perry Rhodan Silber Edition [0-9]+.?'
+          replace: ''
+        - find: 'Der [0-9]+.? Zyklus.? Die Aphilie'
+          replace: ''
+B00FYXVET4:
+  author: 'Tintenwelt'
+  adjustments:
+    - title:
+        - find: '[:]? Tintenwelt [0-9]+'
+          replace: ''
+B01N9D0S35:
+  author: 'Expeditionary Force'
+  adjustments:
+    - title:
+        - find: '[:]? Expeditionary Force, Book [0-9]+'
+          replace: ''
+B00FZVRH4G:
+  author: 'Hyperion & Endymon (de)'
+B004UZHK4K:
+  author: 'Hyperion (en)'
+B00GY9J9TE:
+  author: 'Emmi Rothner und Leo Leike'
+  adjustments:
+    - title:
+        - find: '[:]? Emmi Rothner und Leo Leike [0-9]+'
+          replace: ''
+B00FYU8TX6:
+  author: 'Star Trek Vanguard'
+  adjustments:
+    - title:
+        - find: '[:]? Star Trek Vanguard [0-9]+'
+          replace: ''
+B07KXQVGVV:
+  author: 'Bobbyverse'
+  adjustments:
+    - title:
+        - find: '[:]? Bobiverse [0-9]+'
+          replace: ''
+B06VVBRSGG:
+  author: 'Metro'
+B00FZLQX46:
+  author: 'Per Anhalter durch die Galaxis'
+  adjustments:
+    - title:
+        - find: '[:]? Per Anhalter durch die Galaxis [0-9]+'
+          replace: ''
+B0747LDVCY:
+  author: "Hitchiker's Guide to the Galaxy"
+B00H7CIOTI:
+  author: 'Per Anhalter durch die Galaxis - Hörspiel'
+  adjustments:
+    - title:
+        - find: 'Per Anhalter durch die Galaxis [0-9]+[:]?'
+          replace: ''
+B01BLS972G:
+  author: 'John Carter - Barsoom'
+  adjustments:
+    - title:
+        - find: '[:]? Barsoom Series, Book [0-9]+'
+          replace: ''
+  index_regex: ',Book ([0-9]+)'
+B00HW1SEX0:
+  author: 'Pater Brown Sammelband'
+  index_regex: 'Edition ([0-9]+)'
+B0182T3MCI:
+  author: 'Harry Potter'
+  adjustments:
+    - title:
+        - find: ', Book [0-9]'
+          replace: ''
+B011CIB552:
+  author: 'Maze Runner'
+B0748DLG9T:
+  author: 'Die Riesen-Trilogie'
+  adjustments:
+    - title:
+        - find: '[:]? Riesen-Trilogie [0-9]+'
+          replace: ''
+B00HVEHYDY:
+  author: 'John Sinclair Bücher Compilation'
+  adjustments:
+    - title:
+        - find: 'John Sinclair Compilation [IV]+[:]? '
+          replace: ''
+B00I4V1W18:
+  author: 'John Sinclair - Classics'
+  adjustments:
+    - title:
+        - find: '[:]? John Sinclair Classics [0-9]+'
+          replace: ''
+B073PB8NCK:
+  author: 'The Books of Ember'
+  adjustments:
+    - title:
+        - find: '[:]? The [a-zA-Z]+ Book of Ember'
+          replace: ''
+B00MY9600E:
+  author: 'Southern Reach Trilogy'
+  adjustments:
+    - title:
+        - find: '[:]? Southern Reach Trilogy, Book [0-9]+'
+          replace: ''
+B00FZJKKSS:
+  author: 'Gezeitensternsaga'
+  adjustments:
+    - title:
+        - find: '[:]? Gezeitensternsaga [0-9]+'
+          replace: ''
+B00FZLR0KC:
+  author: 'Krieg der Klone'
+  adjustments:
+    - title:
+        - find: '[:]? Krieg der Klone [0-9]+'
+          replace: ''
+B06XR279FH:
+  author: 'The Interdependency'
+  adjustments:
+    - title:
+        - find: '[:]? The Interdependency, Book [0-9]+'
+          replace: ''
+B011A3O29U:
+  author: "Old Man's War"
+  adjustments:
+    - title:
+        - find: "[:]? Old Man's War, Book [0-9]+"
+          replace: ''
+B00HQGGI1G:
+  author: 'Bartimäus'
+  adjustments:
+    - title:
+        - find: '[:]? Bartimäus [0-9]+'
+          replace: ''
+B00I09IH1W:
+  author: 'Temple Brennan'
+  adjustments:
+    - title:
+        - find: '[:]? Tempe Brennan [0-9]+'
+          replace: ''
+B017M0G28O:
+  author: 'The Red'
+  adjustments:
+    - title:
+        - find: 'The Red [:]? '
+          replace: ''
+B0100EX2IC:
+  author: 'Perry Rhodan - Silber Edition'
+  series_offset: 93
+
+#
+#
+# TITLE OVERRIDES
+#
+#
+B00LX1BRU2:
+  author: 'Perry Rhodan - Silber Edition'
+  title: '119 Der Terraner'
+  series_idx: 119
+B07GL3RZYS: # Perry Rhodan Der Terraner (Teil 1)
+  skip: True
+B004TG7W48:
+  author: 'Perry Rhodan - Silber Edition'
+  title: '079 Raumschiff Erde'
+  series_idx: 76
+B00LX35SLY:
+  author: 'Perry Rhodan - Silber Edition'
+  title: '120 Die Cyber-Brutzellen'
+  series_idx: 120
+B00D5X4MB2:
+  author: 'Sebastian Fitzek'
+  title: 'Amokspiel'
+B07JJZ9W89:
+  author: 'Phillip. P. Peterson'
+B00AJQEDU8:
+  author: 'Sherlock Holmes (en)'
+  title: 'The Adventure of the Blue Carbuncle'
+B004V0DYOO:
+  author: 'Arthur C. Clarke'
+  title: 'The Last Theorem'
+B005I1AL00:
+  title: '{:03d} Das Känguru Manifest'
+B004UW345C: # Sherlock Holmes Collectors Edition I
+  chapters:
+    - name: 'Das Haus bei den Blutbuchen'
+      begin: 0
+      end: 3775426
+    - name: 'Der blaue Karfunkel'
+      begin: 3775426
+      end: 7046746
+    - name: 'Das Musgrave-Ritual'
+      begin: 7046746
+      end: 11780482
+    - name: 'Die fünf Orangenkerne'
+      begin: 11780482
+      end: 15993790
+B004V3VMF4: # Sherlock Holmes Collectors Edition VI
+  chapters:
+    - name: 'Der Hund der Baskervilles'
+      begin: 0
+      end: 8537628
+    - name: 'Der Angestellte des Börsenmaklers'
+      begin: 8537628
+      end: 11985630
+    - name: 'Der Landadel von Reigate'
+      begin: 11985630
+      end: 15691929
+B00PAUBI4C:  # Glashaus: Die komplette 1. Staffel
+  author: 'Glashaus'
+  title: '1. Staffel'
+B00PAUBK1S:
+  skip: true
+B004UZKDNK:
+  author: 'Die besten Crime Stories'
+  title: 'Teil 1'
+  chapters:
+    - name: 'Sherlock Holmes - Im Zeichen der Vier'
+      begin: 0
+      end: 6640861 #40
+    - name: 'Sherlock Holmes - Die Liga der Rothaarigen'
+      begin: 6640861 # 41
+      end: 10615330 # 57
+    - name: 'Pater Brown - Das Verhängnis der Darnaways'
+      begin: 10615330 # 58
+      end: 14666678 # 81
+    - name: 'Pater Brown - Der Fehler in der Maschine'
+      begin: 14666678 # 82
+      end: 17477523 # 95
+    - name: 'Preston Aberdeen - Eil-Couvert für LZ 127'
+      begin: 17477523 # 96
+      end: 22246761 # 116
+    - name: 'Die größen Fälle von Scotland Yard - Resistent'
+      begin: 22246761 # 117
+      end: 26642484 # 140
+    - name: 'Dark Trace - Das Imperium des Blutes'
+      begin: 26642484  # 141
+      end: 31250368 # 164
+    - name: 'NYPDead 01 - Feuer und Flamme'
+      begin: 31250368 # 165
+      end: 34959246
+    - name: 'Hercule Flambeaus Verbrechen - Schattenfeuer'
+      begin: 34959246 # 188
+      end: 38361131
+B004V03H5K:
+  author: 'Die besten Crime Stories'
+  title: 'Teil 2'
+  chapters:
+    - name: 'Dark Trace - 03 Der florentinische Spiegel'
+      begin: 0
+      end: 4352654 # 35
+    - name: 'Dark Trace - 04 Die Signatur des Mörders'
+      begin: 4352654 # 36
+      end: 7592719 # 52
+    - name: 'Die größten Fälle von Scotland Yard - 02 Auf leisen Sohlen'
+      begin: 7592719 # 53
+      end: 12329216 # 88
+    - name: 'Die größten Fälle von Scotland Yard - 03 Treibgut'
+      begin: 12329216 # 89
+      end: 16326972 # 108
+    - name: 'Kurierdienst Preston Aberdeen - 06 Edinburgh nonstop in 2 Stunden'
+      begin: 16326972 # 109
+      end: 23959118 # 154
+    - name: 'Sherlock Holmes - 26 Das Diadem'
+      begin: 23959118 # 155
+      end: 28529918 # 183
+    - name: 'Sherlock Holmes - 28 Der Mann mit der enstellten Lippe'
+      begin: 28529918 # 184
+      end: 32044327 # 199
+    - name: 'Emile Poiret - 01 Der Vollmondsee'
+      begin: 32044327 # 200
+      end: 36668163 # 223
+    - name: 'Pater Brown 18 - Der geflügelte Dolch'
+      begin: 36668163 # 224
+      end: 40189494
+B005J4WDZW:
+  author: 'Jan Tenner'
+  title: '01-08'
+  chapters:
+    - name: 'Angriff der grünen Spinnen'
+      begin: 0
+      end: 2211724
+    - name: 'Tödlicher Nebel'
+      begin: 2211724
+      end: 4639486
+    - name: 'Landung der Giganten'
+      begin: 4639486
+      end: 7042403
+    - name: 'Gefahr aus dem All'
+      begin: 7042403
+      end: 9669648
+    - name: 'Gefährliche Insel'
+      begin: 9669648
+      end: 12437792
+    - name: 'Geheimnis des Adlers'
+      begin: 12437792
+      end: 15195696
+    - name: 'Finsternis über Westland'
+      begin: 15195696
+      end: 17961843
+    - name: 'Red-Rock in Flammen'
+      begin: 17961843
+      end: 20626774
+B005J4W1PY:
+  author: 'Jan Tenner'
+  title: '09-16'
+  chapters:
+    - name: 'Invasion der Androiden'
+      begin: 0
+      end: 2908485
+    - name: 'Der wahnsinnige Professor'
+      begin: 2908485
+      end: 5500064
+    - name: 'Angriff der Weltraumpflanzen'
+      begin: 5500064
+      end: 8233494
+    - name: 'Entführung ins All'
+      begin: 8233494
+      end: 11195756
+    - name: 'Fluch der Silberkugel'
+      begin: 11195756
+      end: 13949875
+    - name: 'Die Zeitfalle'
+      begin: 13949875
+      end: 16732090
+    - name: 'Geschenk der Leonen'
+      begin: 16732090
+      end: 19575002
+    - name: 'Kurs auf Wega'
+      begin: 19575002
+      end: 22224005
+B005J4W514:
+  author: 'Jan Tenner'
+  title: '17-23'
+  chapters:
+    - name: 'Zweisteins Falle'
+      begin: 0
+      end: 2852804
+    - name: 'Planet der Vogelmenschen'
+      begin: 2852804
+      end: 5377185
+    - name: 'Der Schatz von Lurya'
+      begin: 5377185
+      end: 7937765
+    - name: 'Das Totenschiff'
+      begin: 7937765
+      end: 10214110
+    - name: 'Die grüne Hölle'
+      begin: 10214110
+      end: 12659403
+    - name: 'Planet der 1000 Wunder'
+      begin: 12659403
+      end: 15182878
+    - name: 'Der Stein der Macht'
+      begin: 15182878
+      end: 17697785
+B005J4W7W6:
+  author: 'Jan Tenner'
+  title: '24-31'
+  chapters:
+    - name: 'Befreiung der Erde'
+      begin: 0
+      end: 2798353
+    - name: 'Explosion der Sonne'
+      begin: 2798353
+      end: 5139784
+    - name: 'Die Raumschifffalle'
+      begin: 5139784
+      end: 7389635
+    - name: 'Station der Vorzeit'
+      begin: 7389635
+      end: 9586939
+    - name: 'Planet der Puppen'
+      begin: 9586939
+      end: 12170972
+    - name: 'Serum des Todes'
+      begin: 12170972
+      end: 14427139
+    - name: 'Seytanias Rache'
+      begin: 14427139
+      end: 16979221
+    - name: 'Die Steinzeitseuche'
+      begin: 16979221
+      end: 19598711
+B005J4WBQS:
+  author: 'Jan Tenner'
+  title: '32-39'
+  chapters:
+    - name: 'Das dunkle Imperium'
+      begin: 0
+      end: 2639482
+    - name: 'Das Superhirn'
+      begin: 2639482
+      end: 5597936
+    - name: 'Angriff der Puppenkönigin'
+      begin: 5597936
+      end: 8153362
+    - name: 'Der schwarze Tod'
+      begin: 8153362
+      end: 10488477
+    - name: 'Der Höllenplanet'
+      begin: 10488477
+      end: 12875512
+    - name: 'Aufstand der Barbaren'
+      begin: 12875512
+      end: 15081501
+    - name: 'Logars Rache'
+      begin: 15081501
+      end: 17405331
+    - name: 'Seytanias Opfer'
+      begin: 17405331
+      end: 19815377
+B005J4W992:
+  author: 'Jan Tenner'
+  title: '40-46'
+  chapters:
+    - name: 'Meteor des Grauens'
+      begin: 0
+      end: 2442624
+    - name: 'Im Reich des Azzarus'
+      begin: 2442624
+      end: 4520926
+    - name: 'Tempel des Todes'
+      begin: 4520926
+      end: 6864261
+    - name: 'Invasion der Ginnicks'
+      begin: 6864261
+      end: 9251133
+    - name: 'Krieg der Planeten'
+      begin: 9251133
+      end: 11675389
+    - name: 'Zweisteins Rückkehr'
+      begin: 11675389
+      end: 14020837
+    - name: 'Mimo der Rächer'
+      begin: 14020837
+      end: 16949477
+B004V15J1Y: # Pater Brown
+  title: 'Edition 1'
+  chapters:
+    - name: 'Das Geheimnis im Garten'
+      begin: 0
+      end: 3322474
+    - name: 'Der Hammer Gottes'
+      begin: 3322474
+      end: 6478832
+    - name: 'Die fliegenden Sterne'
+      begin: 6478832
+      end: 9819696
+    - name: 'Die drei Todeswerkzeuge'
+      begin: 9819696
+      end: 6478832
+B004V1X8TE: # Pater Brown
+  title: 'Edition 2'
+  chapters:
+    - name: 'Das Auge des Apoll'
+      begin: 0
+      end: 3774729
+    - name: 'Die Sünden des Prinzen Saradin'
+      begin: 3774729
+      end: 7114687
+    - name: 'Das Paradies der Diebe'
+      begin: 7114687
+      end: 10179094
+    - name: 'Die falsche Form'
+      begin: 10179094
+      end: 13550887
+B004UVGK2M: # Pater Brown
+  title: 'Edition 3'
+  chapters:
+    - name: 'Der Mann im Gang'
+      begin: 0
+      end: 3068565
+    - name: 'Das Duell des Dr. Hirsch'
+      begin: 3068565
+      end: 6363130
+    - name: 'Der Kopf des Caesar'
+      begin: 6363130
+      end: 9392824
+    - name: 'Die Ehre des Israel'
+      begin: 9392824
+      end: 12624926
+B004V26BPQ: # Pater Brown
+  title: 'Edition 4'
+  chapters:
+    - name: 'Der Geist von Gideon Wise'
+      begin: 0
+      end: 3401862
+    - name: 'Das Verhängnis der Darnaways'
+      begin: 3401862
+      end: 7453418
+    - name: 'Die seltsamen Schritte'
+      begin: 7453418
+      end: 10550401
+    - name: 'Der Fehler in der Maschine'
+      begin: 10550401
+      end: 13364729
+B004UVHJHW: # Pater Brown
+  title: 'Edition 6'
+  chapters:
+    - name: 'Das Märchen des Pater Brown'
+      begin: 0
+      end: 2970434
+    - name: 'Die purpurfarbene Perücke'
+      begin: 2970434
+      end: 6125050
+    - name: 'Das Zeichen des zerbrochenen Säbels'
+      begin: 6125050
+      end: 9883201
+    - name: 'Pater Browns Auferstehung'
+      begin: 9883201
+      end: 13152525
+B008F8D8BW:
+  title: "1Q84"
+B004UFB5KU:
+  title: 'Die Auserwählten im Labyrinth'
+B00ZFXNE8W:
+  title: 'Die Auserwählten in der Brandwüste'
+B004QXERWY:
+  title: '1700 - 1704'
+  chapters:
+    - name: 'Hüter der Apokalypse'
+      begin: 0
+      end: 11511223
+    - name: 'Templer-Mirakel'
+      begin: 11511223
+      end: 22923180
+    - name: 'Rückkehr der Verdammten'
+      begin: 22923180
+      end: 33694475
+    - name: 'So grausam, schön und tödlich'
+      begin: 33694475
+      end: 44669944
+    - name: 'Teuflische Abrechnung'
+      begin: 44669944
+      end: 56064069
+B004PYXAC2:
+  skip: true
+B004UVDV60:
+  author: 'Doctor Who'
+  title: 'Apollo 23 (Justin Richards)'
+B00KTEKQMY:
+  author: 'Vilm'
+  title: '001 Der Regenplanet'
+B00FRKI8YI:
+  author: 'Jack Reacher (de)'
+  title: '014 61 Stunden'
+B0095T9VA2:
+  author: 'Jack Reacher (de)'
+  title: '013 Underground'
