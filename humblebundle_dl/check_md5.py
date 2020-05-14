@@ -1,4 +1,4 @@
-import cPickle
+import pickle
 import os
 from os import listdir
 from os.path import isfile, join
@@ -8,12 +8,14 @@ import subprocess
 OUTPUT_DIR = "/media/terra/MyBookEx/HB/"
 CALIBRE_CMD = "/Applications/calibre.app/Contents/console.app/Contents/MacOS/calibredb"
 
+
 def md5(fname):
     hash_md5 = hashlib.md5()
     with open(fname, "rb") as f:
         for chunk in iter(lambda: f.read(4096), b""):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
+
 
 class DownloadLink:
     def __init__(self):
@@ -46,7 +48,7 @@ for f in allfiles:
 
     info = None
     with open(OUTPUT_DIR + f) as handle:
-        info = cPickle.load(handle)
+        info = pickle.load(handle)
 
     if info.humanName not in books:
         books[info.humanName] = list()
@@ -68,7 +70,6 @@ for book in books:
 
         md5sum = md5(file_path)
         if md5sum != file.md5:
-            print file.get_filename(), file.md5, md5sum  # , file.company, file.link
+            print(file.get_filename(), file.md5, md5sum)  # , file.company, file.link
             # os.remove(OUTPUT_DIR + "/" + file.get_filename())
             # os.remove(OUTPUT_DIR + "/" + file.get_filename() + ".pickle")
-
