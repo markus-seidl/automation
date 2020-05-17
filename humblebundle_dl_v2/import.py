@@ -76,6 +76,9 @@ def import_product(product: LibraryProduct):
     first_format = clean_type(first.type)
     if first_format == "PDF":
         # PDF titles are the worst, update it with the one we know
+        logger.info("  - Setting title to {title} and marking the book with 'check_metadata'".format(
+            title=product.unfiltered_product_title
+        ))
         set_title(book_id, product.unfiltered_product_title)
         set_tag(book_id, "check_metadata")
 
